@@ -20,7 +20,7 @@ When new version of application comes into play, you just create new container a
 
 ## Node.js
 
-This is node.js cookbook, I assume you expect (and you are right) we are working in node.js and javascript. Still it is good to mention it.
+This is Node.js cookbook, I assume you expect (and you are right) we are working in Node and javascript. Still it is good to mention it.
 
 ### About
 
@@ -30,7 +30,7 @@ Node.js is powerful technology, which appeared at 2009 and started to grow expon
 
 [1]:    http://lmgtfy.com/?q=what+is+docker
 
-### What node gave us
+### What Node gave us
 
 The same you can read on internet, when you are looking for it. Easy and fast developed applications with huge support from open-source world through many well-managed npm packages. Also requiring minimum time to get into this technology and its minimalistic Express framework.
 
@@ -42,10 +42,55 @@ However, you are much more responsible for quality of code, its _clearness_ and 
 
 ### Does Node.js should be used for everything
 
-Huge monoliths with ten thousands of work or more are not good use-case for node.js, this is where i.e. Java is shining (however do you really want to write huge monolith these days...?). Also some specific tasks can be handled by Python or Scala even better. It is always up to you.
+Huge monoliths with ten thousands of work or more are not good use-case for Node, this is where i.e. Java is shining (however do you really want to write huge monolith these days...?). Also some specific tasks can be handled by Python or Scala even better. It is always up to you.
 
 ## Microservices
 
-It is also 
+![Image][image-2]
+
+### About
+
+Microservices are also rising each day, especially thanks to docker, which allowed to use them as easy and fully functional as possible. In past, programmers tried to implement _separation of concerns_ in different ways, based on what current technology was offering them. Starting with object oriented languages to frameworks/approaches which separates layers (MVC, MVVP) then continues with creating services - i.e. SOA with ESB to today microservices.
+
+### Advantages
+
+You can have much more developers work on the same project without interfering with each other work, because they work on different microservices. You can easily deploy and scale them (parsing statistics not fast enough? Lets run five instances of it) and many more. There are lot information out there, check it, if you are interested!
+
+### Disadvantages
+
+You have to handle communication. All of it with all possible scenarious that can happen on the way. Also you have to think about what you really want to separate and what not, otherwise you can end up with lot of microservices that does not fulfill _separation of concerns_ as you expected.
+
+## MongoDB 
+
+### About
+
+It is perfect match for Node. If you have dynamic-typed language (javascript) it is good to use it with _dynamic-typed_ database. Aside from that, mongo is also much faster for many tasks that you want to handle in database.
+
+### Why we use it
+
+For similar reason as we adopted Node. Easy to use, easy to set-up or deploy, does not require pre-defined types (as node.js), have lot of support these days.
+
+### Do we have to use it
+
+Sure not! We do have projects, that use both at the same time, MySQL and MongoDB, it always depends on the purpose. MongoDB lacks one of the best feature that MySQL has - transactions. The complexity of relational databases are the best and the worst they can offer. For gathering a lot statistics data, MongoDB is your friend. To handle critical banking service, maybe you would rather use relational database with transaction.
+
+## MySQL
+
+### About
+MySQL is relational database owned by Oracle, which every single person who is reading this probably know with one great advantage...
+
+![Image][image-3]
+
+### Why we use it 
+
+As you probably saw above, it is free and well-developed database, which is running on such beast as youtube. Talking about relational databases and MySQL would be uninteresting for most of us, therefore I would not write more about it.
+
+## Elasticsearch
+
+### About
+
+Elastic is 
 
 [image-1]: https://github.com/libor-vilimek/cookbook/raw/master/raw/Module-counts.png "https://quartetfs.com/blog/journey-gwt-react/"
+[image-2]: https://github.com/libor-vilimek/cookbook/raw/master/raw/63918150.jpg
+[image-3]: https://github.com/libor-vilimek/cookbook/raw/master/raw/yes-free-stuff.jpg
