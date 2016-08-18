@@ -85,6 +85,20 @@ MySQL is relational database owned by Oracle, which every single person who is r
 
 As you probably saw above, it is free and well-developed database, which is running on such beast as youtube. Talking about relational databases and MySQL would be uninteresting for most of us, therefore I would not write more about it.
 
+### Bookshelf
+
+We have tried several frameworks to connect our Node applications with MySQL. Need to say - most of them are not mature enough (or they were not at the end of 2015). However one we are using and we can recommend is bookshelf. Queries itself are built on knex modules, but bookshelf wraps it and adding additional functionality.
+
+Knex (and therefore bookshelf) have very powerful querybuilder, which is the reason we use it.
+
+## Push notifications
+
+We were using Parse for long time and we were very satisfied with it. However Parse announced end of its services and we have to look for alternatives. We thought about using our own Parse server, because with this announcement, Facebook released Parse as open source. However we were not confident, if the community would be able to handle it in next years.
+
+We decided to use Firebase, because google announced Firebase Cloud Messages and we were already using Firebase for real-time data. However the REST API we needed to use from our servers was not strong enough to our needs. We end up with our own - as simple as possible - push server, which is handling the requests.
+
+But hey, we got microservice! (One meanlingess point to Ackee for using the TOP technology paradigm!)
+
 ## Elasticsearch
 
 ### About

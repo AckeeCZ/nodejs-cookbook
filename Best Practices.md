@@ -100,8 +100,23 @@ The [Mocha][2] with [Chai][3] are well supported and popular testing frameworks,
 
 ### Code coverage
 
-As mentioned in _about_ section, we do use code coverage tools, which tells you how good you are covering code with your tests. You can even see in web browser page which shows you all info you need, even marking the line which was tested and lines which was not.
+As mentioned in _about_ section, we do use code coverage tools, which tells you how good you are covering code with your tests. You can even see in browser all info you need, even marking the lines which was tested and lines which was not (or which branch was executed).
 
+## Npm install
+
+If you are running Node applications, you probably know npm install, which installs all required modules.
+
+### Caret ranges
+
+As recommended by npm cli itself when installing with --save parameter, we use caret ranges, which starst with __^__, i.e. __^1.3.5__. By far we did not have trouble with this approach, as authors of modules are very responsible in making new versions. Using caret ranges can install different version than exactly specified, but it should be always non-breaking change, only bug-fixing or presenting new features.
+
+### Dont send node_modules
+
+The node_modules directory is something that should be present only on runnable environment and you do not want to share it anywhere. Therefore we never send it to our GIT repository or to any other system. Who wants to run our project, he has to run npm install itselft. Also many modules are compiled, therefore they are OS specific after installation.
+
+## Bower
+
+Similar to npm install, the bower allowing installing frontend javascripts and/or css. It also makes easier to distribute application with the right versions without the need of manually checking if i.e. all files have _this_ particular version. Also there is no need to send bower files to GIT or any other system - when needed, it is installed by bower install.
 
 ## Version Control
 
