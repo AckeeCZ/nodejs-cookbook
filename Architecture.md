@@ -102,9 +102,14 @@ But hey, we got microservice! (One meanlingess point to Ackee for using the TOP 
 ## Elasticsearch
 
 ### About
+Elasticsearche is open-source search engine. Due its popularity, there are a lot services connected to it generating additional value.
 
-Elastic is 
+### Why use it
+For searching of course. The API allows highly customizable searches that can be extremely fast and it doesn't put additional load on the server. We use it usually for non-critical data and searches such as suggestions fields.
 
-[image-1]: https://github.com/libor-vilimek/cookbook/raw/master/raw/Module-counts.png "https://quartetfs.com/blog/journey-gwt-react/"
-[image-2]: https://github.com/libor-vilimek/cookbook/raw/master/raw/63918150.jpg
-[image-3]: https://github.com/libor-vilimek/cookbook/raw/master/raw/yes-free-stuff.jpg
+### Kibana
+Next service we are using is Kibana. It is built on elastic search and serves us as logging service. Easy to set up and use, with a variety of options to visualize data.
+
+[image-1]: https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/Module-counts.png "https://quartetfs.com/blog/journey-gwt-react/"
+[image-2]: https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/63918150.jpg
+[image-3]: https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/yes-free-stuff.jpg

@@ -13,7 +13,7 @@ If you wanna learn more about how we cook our apps you should visit those docume
 - [Ackee Image Server][5] Our own server for images
 
 [1]:	http://docs.cookbook3.apiary.io/#
-[2]:	https://github.com/libor-vilimek/cookbook/blob/master/Best%20Practices.md
-[3]:	https://github.com/libor-vilimek/cookbook/blob/master/Architecture.md
-[4]:	https://github.com/libor-vilimek/cookbook/blob/master/Code%20Quality.md
-[5]:	https://github.com/libor-vilimek/cookbook/blob/master/Ackee%20Image%20Server.md
+[2]:	https://github.com/AckeeCZ/nodejs-cookbook/blob/master/Best%20Practices.md
+[3]:	https://github.com/AckeeCZ/nodejs-cookbook/blob/master/Architecture.md
+[4]:	https://github.com/AckeeCZ/nodejs-cookbook/blob/master/Code%20Quality.md
+[5]:	https://github.com/AckeeCZ/nodejs-cookbook/blob/master/Ackee%20Image%20Server.md

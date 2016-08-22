@@ -118,6 +118,17 @@ The node_modules directory is something that should be present only on runnable 
 
 Similar to npm install, the bower allowing installing frontend javascripts and/or css. It also makes easier to distribute application with the right versions without the need of manually checking if i.e. all files have _this_ particular version. Also there is no need to send bower files to GIT or any other system - when needed, it is installed by bower install.
 
+## Promises
+We do not use callbacks anymore. They often lead to callback hell and have more problematic usage.
+![Image][image-3]
+
+With ES6 comes the Promises (well they came already before that, but after this, they were finally standartized and included inside Node internal packages). And they are GREAT! Not only for avoiding callback hell, it allows you to take many promises at once and works with them as you needed. And chaining them togehter is much more readable easy. Also throwing and catching error is really improved as one error catch can satisfy any number of chained promises! (if you used callbacks back then, they always have to start with _if (err) { }_
+
+## Social Networks
+Almost every single popular app has possibility to login/register through the social network. And it is great option we can offer our customers, therefore we do it (almost) anywhere!
+
+We can also recommend it as it is not difficult to implement and it is secure (facebook/google is handling validity and security of access tokens itself, you just accept their services). Also less services you have to write password to, the better chance it would not be discovered.
+
 ## Version Control
 
 We use git and gitlab. we follow [feature branch workflow][4] for development with merge requests. We have `master` branch where lays production code. in `development` branch we keep *current* development version of the app. 
@@ -151,5 +162,6 @@ Other emojis like ➕ are also used, but we dont need a convention for every emo
 [2]:    https://mochajs.org/
 [3]:    http://chaijs.com/
 
-[image-1]:	https://github.com/libor-vilimek/cookbook/raw/master/raw/65692646.jpg "Brace Yourself!"
-[image-2]:	https://github.com/libor-vilimek/cookbook/raw/master/raw/health-00to19.png "BUM!"
+[image-1]:	https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/65692646.jpg "Brace Yourself!"
+[image-2]:	https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/health-00to19.png "BUM!"
+[image-3]: https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/DEg3cPZ.png

@@ -4,7 +4,7 @@
 
 ## Eslint
 
-We have discussed eslint in [Best Practices][1] section, it helps to keep code quality, but of course, only small part of it. The context is not proccesable by the machine.
+We have discussed eslint in [Best Practices][1] section, it helps to keep better code quality, but of course, only small part of it. The context is not proccesable by the machine.
 
 ## Standards
 
@@ -16,7 +16,7 @@ The structure of our projects is based on our __node template__ project. It is w
 
 #### Basic structure of project
 
-We haven't invented wheel, we used the known approaches that was succesfully invented and tested in many applications.
+We haven't invented wheel, we used the known best practicec.
 
 ```
  |->app
@@ -44,7 +44,33 @@ The flow of app is as follows. The Node is started with server.js, it loads all 
 
 The config/routes defines basic structure of all routes with requiring app/routes modules. When request come, it finds path previously defined, it can go through middleware methods and hit function in controller. There it usually works with services or with facade methods. The facade is only file which is connected to database models and create queries for it. After it returns value, it goes all the way back to controller, where it is sent back to user.
 
+## Naming conventions
+It is good to use one naming convention for all the variables, functions and classes in the whole application. The camelCase was the one that won, because of simplicity, lack of special characters and fact it is widely used
 
+## Separation of concerns
+As mentioned in Architecture section of our cookbook, we try to not our applications to grow "too big" as time need to do anything in big project or get involved in it is huge.
 
-[1]: https://github.com/libor-vilimek/cookbook/blob/master/Best%20Practices.md "Best Practices"
-[image-1]: https://github.com/libor-vilimek/cookbook/raw/master/raw/feel_bad_meme.jpg
+The solution these days are microservices and Docker. If it makes sense and whole project is big enough, it is put into several microservices, which keeps each one of them small and well-arranged.
+
+## Tests and Code coverage
+It is described in Best Practices section. The tests and code coverage tools help us keep our code tested and possibly easier to find weak spots.
+
+## JSDoc
+There is a convention "how to comment your code", similar to JavaDoc. If you do it right, the tools in IDE are able to tell you, what parameter types are expected, what is returned and description of method. Also having a comment-style convention in all your code make it more readable for developers too.
+
+### Generating JSDoc HTML
+Not good :(. We have tried several tools, but none of them was able to generate good results (especially with linking it together). You can specify type in JSDoc (altough Javascript itself is dynamic-typed) and i.e. Webstorm is able to warn you, if you use wrong type. However tools for generating HTML JSDoc are not clever enough, and it gives you almost same insight possibilities as looking into the code itself.
+
+## Merge requests
+Also mentioned in Best Practices section. Every single line of code is reviewed by another programmer before it's merged into public branch.
+
+## Const, let
+We do not use _var_ anymore as it has unusual behaviour because of [Hoisting][2]. Const is good to declare your variable "unrewritable", therefore you cant by accident remove it and it is also another message just in code saying "this variable is initialized here and nowhere else and we do know about it". (It supplies _final_ statement in Java)
+
+The _let_ behaves (almost) same as if you use it in Java. There is _limited_ Hoisting used, but it does not affect program as much  as _var_ can.
+
+## 
+
+[1]: https://github.com/AckeeCZ/nodejs-cookbook/blob/master/Best%20Practices.md "Best Practices"
+[2]: http://www.w3schools.com/js/js_hoisting.asp
+[image-1]: https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/feel_bad_meme.jpg

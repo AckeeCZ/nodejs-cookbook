@@ -4,11 +4,11 @@ One of our server (lets call it microservice, it sounds great) is Ackee Image Se
 
 ## Why our own server
 
-Well the cloudinary prices rises as you keep using it. And you usually want backward picture compatibility for years. Compare to that, having files just on s3 cost almost nothing. Now the question is, how hard is to write your own cloudinary-like service? 
+Well the cloudinary prices rises as you keep using it. And you usually want backward picture compatibility for years. Compare to that, having files just on s3 cost almost nothing. Now the question is, how hard is to write your own cloudinary-like service?
 
 Lets write a poem about it..
 
-From ashes and tiers, the new Server rises, with power and fierce, and some surprises. 
+From ashes and tiers, the new Server rises, with power and fierce, and some surprises.
 
 (these rhymes are property of Ackee s.r.o., use it your own risk, we are not responsible for any damage by reading it or saying it to anyone else)
 
