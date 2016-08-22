@@ -1,6 +1,8 @@
 # Best practices
 
-## Table of Contents
+## Postman
+
+One of the best software ever developed. It makes accessing, sharing and testing of your REST API as easy as possible and it is free! We have described some high-level usage [here][4]. If you have not met postman, we recommend you to [try it][5]
 
 ## ESLint
 
@@ -122,7 +124,7 @@ Similar to npm install, the bower allowing installing frontend javascripts and/o
 We do not use callbacks anymore. They often lead to callback hell and have more problematic usage.
 ![Image][image-3]
 
-With ES6 comes the Promises (well they came already before that, but after this, they were finally standartized and included inside Node internal packages). And they are GREAT! Not only for avoiding callback hell, it allows you to take many promises at once and works with them as you needed. And chaining them togehter is much more readable easy. Also throwing and catching error is really improved as one error catch can satisfy any number of chained promises! (if you used callbacks back then, they always have to start with _if (err) { }_
+With ES6 comes the Promises (well they came already before that, but after this, they were finally standartized and included inside Node internal packages). And they are GREAT! Not only for avoiding callback hell, it allows you to take many promises at once and works with them as you need. Also throwing and catching error is really improved as one error catch can satisfy any number of chained promises! (if you used callbacks back then, they always have to start with _if (err) { ... }_
 
 ## Social Networks
 Almost every single popular app has possibility to login/register through the social network. And it is great option we can offer our customers, therefore we do it (almost) anywhere!
@@ -161,6 +163,8 @@ Other emojis like ➕ are also used, but we dont need a convention for every emo
 [1]:	https://github.com/airbnb/javascript
 [2]:    https://mochajs.org/
 [3]:    http://chaijs.com/
+[4]:	https://github.com/AckeeCZ/nodejs-cookbook/blob/master/Postman%20Advanced%20Guide.md
+[5]:    https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
 
 [image-1]:	https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/65692646.jpg "Brace Yourself!"
 [image-2]:	https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/health-00to19.png "BUM!"
