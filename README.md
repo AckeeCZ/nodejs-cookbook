@@ -2,11 +2,11 @@
 
 This ackee cookbook contains know-how of Node.js development. If you tried to find some food related recipe, don't worry, we have created cookbook based on this cookbook, which can be accessed with REST API, described on [apiary][1].
 
-We like to share our ideas and experience with everyone! Also it is good to have best practices all in one place.
+We like to share our ideas and experience with everyone!
 
 ## Table of contents
 
-If you wanna learn more about how we cook our apps you should visit those documents 
+If you wanna learn more about how we cook our servers you should visit those awesome links
 - [Best Practices][2] Know-how gained through hard work
 - [Architecture][3] Architecture of our applications
 - [Code Quality][4] How we get our code so nice and clean?
