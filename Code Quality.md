@@ -8,7 +8,7 @@ We have discussed eslint in [Best Practices][1] section, it helps to keep better
 
 ## Standards
 
-We have implemented few standards, which keeps our Node code (wow a rhyme) readable and consistent. If you get involved into one of our project and adopt the basic structure of application, then you are able to easily switch to any other. Even if you have never seen that project before, you should be able to implement new features or do change requests in reasonable times.
+We have implemented few standards, which keeps our _Node code_ (wow a rhyme) readable and consistent. If you get involved into one of our project and adopt the basic structure of application, then you are able to easily switch to any other project. Even if you have never seen that project before, you should be able to implement new features or do change requests in reasonable times.
 
 ### Node Template
 

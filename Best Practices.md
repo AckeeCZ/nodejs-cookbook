@@ -2,7 +2,7 @@
 
 ## Postman
 
-One of the best software ever developed. It makes accessing, sharing and testing of your REST API as easy as possible and it is free! We have described some high-level usage [here][4]. If you have not met postman, we recommend you to [try it][5]
+One of the best software ever developed. It makes accessing, sharing and testing of your REST API as easy as possible! We have described some high-level usage [here][4]. If you have not met postman yet, we recommend you to [try it][5]
 
 ## ESLint
 
@@ -10,21 +10,21 @@ One of the best software ever developed. It makes accessing, sharing and testing
 
 ### About
 
-ESLint is used for static control of quality of your code and for coding standards.
+ESLint is used for static analysis of your code and for coding standards.
 
 ### How to use
 
-Each project has scripts in package.json for running the eslint with all required parameters.
+We have predefined scripts in each project for running the eslint with all required parameters and rules. 
 
 ### Why do we use it
 
-It is very easy to set up - either on your local machine either in continues integration process.
+It is very easy to set up - either on your local machine or in continous integration process.
 
-Also having same standards is always good and prevents a lot of potentional bugs.
+Having same standards for all developers in team is always good!
 
 ### What rules do we use
 
-We decided that we should look to succesfull companies to see, how they roll. We liked a lot an [airbnb javascript guide][1], therefore that was the starting point. We managed to go through each rule and decide if we want to follow it. Some points where changed (i.e. changed from error to warning), but most of it stayed same as theirs.
+We have decided that we should look to succesfull companies.. We enjoyed a lot an [airbnb javascript guide][1], therefore that was the starting point. We managed to go through each rule and decide if we want to follow it. Some points where changed (i.e. changed from error to warning), but we have adapted most of it .
 
 ### How does it help us
 
@@ -82,15 +82,15 @@ When everyone have comma at the end of line, you are safe to do almost anything 
 
 ### About
 
-Most of you probably know automated testing. We also use it a lot, not having sufficient code coverage can be even reason to not accept your commit into development and/or production branch!
+If you read this cookbook, you probably know what automated tests are. We also use it a lot! We even control the  sufficient code coverage. If you write too much code without tests, it can be even reason to not accept your commit into development and/or production branch!
 
-And worst of all, our continues integration system (jenkins at the moment) will mark your commit with __this evil picture__: ![Image][image-2]
+And worst of all, our continues integration system (jenkins) will mark your commit with __this evil picture__: ![Image][image-2]
 
 ### Why we use it
 
-Writing tests in beggining of project seems like wasting time. You spend time with writing tests, while it almost never find any additional error. However as project continues, the complexity rises with incoming change-requests from customers (or mobile app/frontend developers, but you know, you are writing the server, you are the master, they have to obey your API).
+Writing tests in beggining of project seems like wasting time. You spend time with writing tests, while it almost never find any additional error. However as project continues, the complexity rises with incoming change-requests from customers (or mobile app/frontend developers, but you know, you are writing the server, you are the master, they have to obey your API #ServerMasterRace).
 
-Bigger the code and complexity, bigger the chance you create bug while fixing another or when implementing new feature. Everyone one at least once said : this new code should _never ever_ affect existing code but it actually __does__ (yes, life is cruel), good written tests are here for you to warn you.
+Bigger the code and complexity, bigger the chance you create bug while fixing another. Everyone at least once said : this new code should _never ever_ affect existing code but it actually __does__ (yes, life is cruel), good written tests are here for you to warn you.
 
 ### What tests do we use
 
@@ -114,26 +114,28 @@ As recommended by npm cli itself when installing with --save parameter, we use c
 
 ### Dont send node_modules
 
-The node_modules directory is something that should be present only on runnable environment and you do not want to share it anywhere. Therefore we never send it to our GIT repository or to any other system. Who wants to run our project, he has to run npm install itselft. Also many modules are compiled, therefore they are OS specific after installation.
+The node_modules directory is something that should be present only on runnable environment and you do not want to share it anywhere. Therefore we never send it to our GIT repository or to any other deployment system. Who wants to run our project, he has to run npm install itselft. Also many modules are compiled, therefore they are OS specific after installation.
 
 ## Bower
 
 Similar to npm install, the bower allowing installing frontend javascripts and/or css. It also makes easier to distribute application with the right versions without the need of manually checking if i.e. all files have _this_ particular version. Also there is no need to send bower files to GIT or any other system - when needed, it is installed by bower install.
 
 ## Promises
-We do not use callbacks anymore. They often lead to callback hell and have more problematic usage.
+_NO MORE CALLBACKS_! Yay!
+
 ![Image][image-3]
 
 With ES6 comes the Promises (well they came already before that, but after this, they were finally standartized and included inside Node internal packages). And they are GREAT! Not only for avoiding callback hell, it allows you to take many promises at once and works with them as you need. Also throwing and catching error is really improved as one error catch can satisfy any number of chained promises! (if you used callbacks back then, they always have to start with _if (err) { ... }_
 
 ## Social Networks
-Almost every single popular app has possibility to login/register through the social network. And it is great option we can offer our customers, therefore we do it (almost) anywhere!
+Almost every popular app has possibility to login/register through the social network. Our apps (yea, extremely popular with fantastic design and no errors at all) are not exception. It is great option we can offer our customers, therefore we do it (almost) anywhere!
 
-We can also recommend it as it is not difficult to implement and it is secure (facebook/google is handling validity and security of access tokens itself, you just accept their services). Also less services you have to write password to, the better chance it would not be discovered.
+We can also recommend it as it is not difficult to implement. Also security is not the issue (facebook/google is handling validity and security of access tokens itself, you just accept their services).
 
 ## Version Control
+### TODO - take Version Control from iOS cookbook
 
-We use git and gitlab. we follow [feature branch workflow][4] for development with merge requests. We have `master` branch where lays production code. in `development` branch we keep *current* development version of the app. 
+We use git and gitlab we follow [feature branch workflow][4] for development with merge requests. We have `master` branch where lays production code. in `development` branch we keep *current* development version of the app. 
 
 ### Branching 
 For every fix or feature you have to create separate branch. When you are done. You create merge request.
