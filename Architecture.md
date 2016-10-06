@@ -95,11 +95,13 @@ As you probably saw above, it is free and well-developed database, which is runn
 ### MariaDB
 We prefer to use MariaDB as it is maintened by core developers of previous MySQL.
 
-### Bookshelf
+### Knex & Bookshelf ORM
 
-We have tried several frameworks to connect our Node applications with MySQL. Need to say - most of them are not mature enough (or they were not at the end of 2015). The one we are using and we can recommend is bookshelf. Queries itself are built on knex modules and bookshelf wraps it and adding additional functionality (especially for defining MySQL models).
+We have tried several frameworks to connect our Node applications with MySQL. Need to say - most of them are not mature enough (or they were not at the end of 2015). The one we are using and we can recommend is Knex - a powerful SQL querybuilder, supporting both callbacks and Promises/A+.
 
-Knex (and therefore bookshelf) have very powerful querybuilder, which is the reason we use it.
+Knex provides great, but low-level interface to the storage. For working with models, there is a Bookshelf ORM library, allowing you  to define models and relations between them. Bookshelf is built on top of Knex, so anytime you can just fall back to Knex interface if ORM queries are too heavy, clumsy, or just hard to write.
+
+This Knex-Bookshelf symbiosis is very nice to work with and we have not discovered any crucial limitations of Knex yet, which are the main reasons we use it.
 
 ## Push notifications
 
