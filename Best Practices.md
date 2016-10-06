@@ -100,6 +100,10 @@ In most of our node.js applications, we are focusing on integeration tests that 
 
 The [Mocha][2] with [Chai][3] are well supported and popular testing frameworks, therefore we decided to utry them and they serve its purpose.
 
+Using live web-services in tests is not a good idea, as our application relies on that interface anyway, it is better to create a mock. For creating mock-ups of remote services we use [Nock][6], which intercepts the request of your application on Node http layer.
+
+Speaking of HTTP requests in tests, we really enjoy [supertest][7], as it provides convinient interface for testing request responses. There also exists a Promise-based version supertest-promised.
+
 ### Code coverage
 
 As mentioned in _about_ section, we do use code coverage tools, which tells you how good you are covering code with your tests. You can even see in browser all info you need, even marking the lines which was tested and lines which was not (or which branch was executed).
@@ -160,13 +164,16 @@ Codereview is done in gitlab. There are 4 levels of reviewer's anger:
 | 💩      | :shit:            | Won't be merged. Also, you should walk through sewers for a month. _(Rarely Used)_           | NO     |   |
 
 
-Other emojis like ➕ are also used, but we dont need a convention for every emoji out there. ❤ 
+Other emojis like ➕ are also used, but we dont need a convention for every emoji out there. ❤
 
 [1]:	https://github.com/airbnb/javascript
 [2]:    https://mochajs.org/
 [3]:    http://chaijs.com/
 [4]:	https://github.com/AckeeCZ/nodejs-cookbook/blob/master/Postman%20Advanced%20Guide.md
 [5]:    https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
+[6]:    https://github.com/node-nock/nock
+[7]:    https://github.com/visionmedia/supertest
+
 
 [image-1]:	https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/65692646.jpg "Brace Yourself!"
 [image-2]:	https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/health-00to19.png "BUM!"
