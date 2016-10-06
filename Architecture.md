@@ -114,10 +114,12 @@ But hey, we got microservice! (One meanlingess point to Ackee for using the TOP 
 ## Elasticsearch
 
 ### About
-Elasticsearch is open-source search engine. Due its popularity there are a lot services connected to it generating additional value.
+Elasticsearch is open-source search engine, built on top of Apache Lucene. Due to its popularity there are a lot services connected to it generating additional value.
 
 ### Why use it
-For searching of course. The API allows highly customizable searches that can be extremely fast and it doesn't put additional load on the database. We use it usually for non-critical data and searches such as suggestions fields.
+For searching of course. The API allows highly customizable searches that can be extremely fast and it doesn't put additional load on the database.
+
+We use it usually to access data _fast_, but keep in mind Elasticsearch is search engine, not a database engine. That is why we keep important data also somewhere else, syncing those we search to Elastic, so we can look them up easily, as for complicated queries, it is usually much faster than to query large data sets in database directly.
 
 ### Kibana
 Next service we are using is Kibana. It is built on elastic search and serves as logging service. Easy to set up and use, with a variety of options to visualize data.
