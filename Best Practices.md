@@ -24,7 +24,7 @@ Having same standards for all developers in team is always good!
 
 ### What rules do we use
 
-We have decided that we should look to succesfull companies.. We enjoyed a lot an [airbnb javascript guide][1], therefore that was the starting point. We managed to go through each rule and decide if we want to follow it. Some points where changed (i.e. changed from error to warning), but we have adapted most of it .
+We have decided that we should look at some succesful companies.. We enjoyed an [airbnb javascript guide][1] a lot, therefore that was the starting point. We managed to go through each rule and decide if we want to follow it. Some points where changed (i.e. changed from error to warning), but we have adapted most of it.
 
 ### How does it help us
 
@@ -84,7 +84,7 @@ When everyone have comma at the end of line, you are safe to do almost anything 
 
 If you read this cookbook, you probably know what automated tests are. We also use it a lot! We even control the  sufficient code coverage. If you write too much code without tests, it can be even reason to not accept your commit into development and/or production branch!
 
-And worst of all, our continues integration system (jenkins) will mark your commit with __this evil picture__: ![Image][image-2]
+And worst of all, our continuous integration system (Jenkins) will mark your commit with __this evil picture__: ![Image][image-2]
 
 ### Why we use it
 
@@ -99,6 +99,10 @@ In most of our node.js applications, we are focusing on integeration tests that 
 ### Technologies
 
 The [Mocha][2] with [Chai][3] are well supported and popular testing frameworks, therefore we decided to utry them and they serve its purpose.
+
+Using live web-services in tests is not a good idea, as our application relies on that interface anyway, it is better to create a mock. For creating mock-ups of remote services we use [Nock][6], which intercepts the request of your application on Node http layer.
+
+Speaking of HTTP requests in tests, we really enjoy [supertest][7], as it provides convinient interface for testing request responses. There also exists a Promise-based version supertest-promised.
 
 ### Code coverage
 
@@ -125,48 +129,55 @@ _NO MORE CALLBACKS_! Yay!
 
 ![Image][image-3]
 
-With ES6 comes the Promises (well they came already before that, but after this, they were finally standartized and included inside Node internal packages). And they are GREAT! Not only for avoiding callback hell, it allows you to take many promises at once and works with them as you need. Also throwing and catching error is really improved as one error catch can satisfy any number of chained promises! (if you used callbacks back then, they always have to start with _if (err) { ... }_
+With ES6 comes the Promises (well they came already before that, but after this, they were finally made standard and included inside Node internal packages). And they are GREAT! Not only for avoiding callback hell, it allows you to take many promises at once and works with them as you need. Also throwing and catching error is really improved as one error catch can satisfy any number of chained promises! (if you used callbacks back then, they always have to start with _if (err) { ... }_
 
 ## Social Networks
-Almost every popular app has possibility to login/register through the social network. Our apps (yea, extremely popular with fantastic design and no errors at all) are not exception. It is great option we can offer our customers, therefore we do it (almost) anywhere!
+Almost every popular app has possibility to login/register through the social network. Our apps (yea, extremely popular with fantastic design and no errors at all) are no exception. It is great option we can offer to our customers, therefore allow social signing into almost every our app.
 
-We can also recommend it as it is not difficult to implement. Also security is not the issue (facebook/google is handling validity and security of access tokens itself, you just accept their services).
+We can also recommend it as it is not that difficult to implement. Also security is not the issue (Facebook/Google handles validity and security of access tokens itself, you just use their services).
 
 ## Version Control
-### TODO - take Version Control from iOS cookbook
 
-We use git and gitlab we follow [feature branch workflow][4] for development with merge requests. We have `master` branch where lays production code. in `development` branch we keep *current* development version of the app. 
+We use git and gitlab we follow [feature branch workflow][4] for development with merge requests. We have `master` branch where lays production code. in `development` branch we keep *current* development version of the app.
 
-### Branching 
+### Branching
 For every fix or feature you have to create separate branch. When you are done. You create merge request.
 
 ### Naming
 Name branches with meaningful names which describes what you are trying to do there. When more developers are on the project prefix the name with your initials i.e `dv/fix-login-action`
 
-### Merge Requests 
+### Merge Requests
 On every project we do merge requests. If there are 2 developers on project they do cross merge requests. If there is less or more developers you can do round robin assignment within a team. Everyone creates MR even senior developer can assign MR to junior on his project. Why? [here is the explanation]()
 
 - Always choose destination branch the one from which you originally branched.‼️
-- Only `development`branch could be merged into `master` 💀 
+- Only `development`branch could be merged into `master` 💀
 
 ### Code review
-Codereview is done in gitlab. There are 4 levels of reviewer's anger:
+
+I personally recommend two-level CR: firstly by you, secondly by someone else.
+
+Whether you are using git bash or any Git viewer (Sourcetree, ...), take a look at your diff changes before you commit first - you can then easily see what you changed if it corresponds to changes you were supposed to do, if you haven't temporarily changed anything else and just forgot it etc.
+
+This helps a lot, but the fact that you like these code changes does not mean everyhing is ok and four eyes are better than two. Second level code review is done in gitlab, where you showcase the changes to a fellow programmer. There are 4 levels of reviewer's anger:
 
 | emoji | shortcut          | meaning                                                                                      | merged |   |
 |--------|-------------------|----------------------------------------------------------------------------------------------|--------|---|
 | ❔      | :grey_question:   | I'm probably just bored and want to talk :)                                                 | YES    |   |
-| ❕      | :grey_exclamation | I will merge this but you should either not do this again or defend it here in the comments. | YES    |   |
+| ❕      | :grey_exclamation: | I will merge this but you should either not do this again or defend it here in the comments. | YES    |   |
 | ❗      | :exclamation:     | Won't be merged, unless it's a question and you reply that there's no problem.              | MAYBE     |   |
 | 💩      | :shit:            | Won't be merged. Also, you should walk through sewers for a month. _(Rarely Used)_           | NO     |   |
 
 
-Other emojis like ➕ are also used, but we dont need a convention for every emoji out there. ❤ 
+Other emojis like ➕ are also used, but we dont need a convention for every emoji out there. ❤
 
 [1]:	https://github.com/airbnb/javascript
 [2]:    https://mochajs.org/
 [3]:    http://chaijs.com/
 [4]:	https://github.com/AckeeCZ/nodejs-cookbook/blob/master/Postman%20Advanced%20Guide.md
 [5]:    https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop
+[6]:    https://github.com/node-nock/nock
+[7]:    https://github.com/visionmedia/supertest
+
 
 [image-1]:	https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/65692646.jpg "Brace Yourself!"
 [image-2]:	https://github.com/AckeeCZ/nodejs-cookbook/raw/master/raw/health-00to19.png "BUM!"
