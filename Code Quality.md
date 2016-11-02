@@ -12,11 +12,11 @@ We have implemented few standards, which keeps our _Node code_ (wow a rhyme) rea
 
 ### Node Template
 
-The structure of our projects is based on our __node template__ project. It is well-tested project that can be run and deployed itself. In last few years we have succesfully created a lot of projects, therefore we have identified use-cases which are common in most of them and we have put them into this Template.
+The structure of our projects is based on our __node template__ project, which. It is well-tested project that can be run and deployed as it is. In last few years we have succesfully created a lot of projects, therefore we have identified use-cases which are common in most of them and we have put them into this Template.
 
 #### Basic structure of project
 
-We haven't invented wheel, we used the known best practicec.
+We haven't invented wheel, we used the known best practices.
 
 ```
  |->app
@@ -40,12 +40,14 @@ We haven't invented wheel, we used the known best practicec.
  |server.js *Main file
 ```
 
-The flow of app is as follows. The Node is started with server.js, it loads all the required configuration in config folders (especially express and routes definition) and starts the server on required port.
+The flow of app is as follows. The Node is started with server.js, it loads all the required configuration from config folders (especially express bootstrap and routes definition) and starts the server that listens on a required port.
 
-The config/routes defines basic structure of all routes with requiring app/routes modules. When request come, it finds path previously defined, it can go through middleware methods and hit function in controller. There it usually works with services or with facade methods. The facade is only file which is connected to database models and create queries for it. After it returns value, it goes all the way back to controller, where it is sent back to user.
+The config/routes defines basic structure of all routes with requiring app/routes modules. When the request comes, it finds path previously defined, it can go through middleware methods and hit final handler function in a controller. Once in the handler function, it usually utilizes some service or facade methods and converts the result into HTTP response. 
+
+The facade is only a file - a Node.js module - which encapsulates capabilities of the application. Usually works with database models, performs CRUD operations as well as other business logic. After the facade task is finished, it returns the value, which goes all the way back to controller, where it is sent back to client.
 
 ## Naming conventions
-It is good to use one naming convention for all the variables, functions and classes in the whole application. The camelCase was the one that won, because of simplicity, lack of special characters and fact it is widely used
+It is good to use one naming convention for all the variables, functions and classes in the whole application. The camelCase was the one that won, because of simplicity, lack of special characters and fact it is widely used. Take [Google styleguides](https://google.github.io/styleguide/javascriptguide.xml#Naming), as an example.
 
 ## Separation of concerns
 As mentioned in Architecture section of our cookbook, we try to not our applications to grow "too big" as time need to do anything in big project or get involved in it is huge.
@@ -65,9 +67,11 @@ Not good :(. We have tried several tools, but none of them was able to generate 
 Also mentioned in Best Practices section. Every single line of code is reviewed by another programmer before it's merged into public branch.
 
 ## Const, let
-We do not use _var_ anymore as it has unusual behaviour because of [Hoisting][2]. Const is good to declare your variable "unrewritable", therefore you cant by accident remove it and it is also another message just in code saying "this variable is initialized here and nowhere else and we do know about it". (It supplies _final_ statement in Java)
+We do not use _var_ anymore as it has unusual behaviour because of [Hoisting][2]. Const is good to declare your variable "unrewritable", therefore you cant by accident remove it and it is also another message just in code saying "this variable is initialized here and nowhere else and we do know about it". (It supplies _final_ statement in Java).
 
 The _let_ behaves (almost) same as if you use it in Java. There is _limited_ Hoisting used, but it does not affect program as much  as _var_ can.
+
+A good practice is to use const and let where it fits, just to let fellow programmers know, that this is and is not meant to be changed.
 
 ## 
 

@@ -8,7 +8,7 @@ Good architecture allows us to create scalable applications.
 
 Have you heard about docker? Not yet? Really? Well, then this would [help you][1]
 
-In few words, it is something similar to virtual machine, but it is much more easy to set up and run, clone, create your own images. One of the most important advantage is sharing images in public repositories and support by major cloud providers.
+In a few words, it is something similar to a virtual machine, but it is much easier to set it up and run, clone, create your own images. One of the most important advantages is sharing it's images in public repositories and support by major cloud providers.
 
 Do you want to create twenty fully set-up and working MySQL databases on your localhost (or at any other place)? Run one-line command twenty times and it is done. You dont even need powerful computer to do it, 2GB RAM (with debian) and few GB of space is enough. Now try to run twenty virtual machines with same settings... Or set up twenty independent MySQL databases on your localhost, how long does it take?
 
@@ -17,7 +17,7 @@ Do you want to create twenty fully set-up and working MySQL databases on your lo
 The instances are called _containers_. You can create i.e. container with MySQL, Tomcat, Node.js... And to run any of these technologies, you just run one-line command, because fully working images already exist in public repositories.
 
 __Deployment? No problem anymore!__
-When new version of application comes into play, you just create new container. After it succesfully load, you just stop the old one. The end-user does not see nothing, reverse proxy just routes new connection to new container. Where no connection to the old container exist, you remove it. No downtime with minimum set-up time.
+When new version of application comes into play, you just create new container. After it succesfully loads, you just stop the old one. The end-user does not see anything, reverse proxy just routes new connection to new container. Where no connection to the old container exist, you remove it. No downtime with minimum set-up time.
 
 ### Cost
 
@@ -25,11 +25,11 @@ Free. Opensource. Enjoy :).
 
 ## Node.js
 
-This is Node.js cookbook, I assume you expect (and you are right _clever boy_ ) we are working in Node and Javascript.
+This is Node.js cookbook, I assume you expect (and you are right _clever boy_) us to work with Node and Javascript.
 
 ### About
 
-Node.js is powerful technology, which appeared at 2009 and started to grow exponencially, especially after 2013. Using Javascript language serverside allowed lot of modules to be shared - both on frontend and backend. Today, the npm repository is by far the biggest repository in the world.
+Node.js is powerful technology, which appeared at 2009 and started to grow exponencially, especially after 2013. Using Javascript language serverside allowed a lot of modules to be shared - for both frontend and backend. Today, the npm repository is by far the biggest repository in the world.
 
 ![Image][image-1]
 
@@ -41,7 +41,7 @@ The same you can read on internet almost everywhere. Easy and fast developed app
 
 It has advantages and disadvantages at the same time. The biggest disadvantage is lack of static compiler options. The biggest advantage is sometimes the same - lack of predefined types allows much easier modifications. You do not have to extend your object to just add one more field or new method, if you need it. Change requests are often less painfull than with Java or similar languages.
 
-However, you are more responsible for code quality, its _clearness_ and understandability. Because you can do almost anything in Javascript, you are your own worst enemy.
+However, you are more responsible for the code quality, its _clearness_ and understandability. Because you can do almost anything in Javascript, you are your own worst enemy.
 
 ### Does Node.js should be used for everything
 
@@ -53,29 +53,29 @@ Huge monoliths with ten thousands of work or more are not good use-case for Node
 
 ### About
 
-Microservices are getting more popular each day, especially thanks to docker, which allowed to use them as easy and fully functional as possible. In past, programmers tried to implement _separation of concerns_ in different ways, based on what current technology was offering them. Starting with object oriented languages to separate responsiblity. Then frameworks and separating layers (MVC, MVVP) comes into play and then it continues with creating Service Oriented Architecture. Finally, the level of infrastructure worldwide, powered by cloud technology, allowed microservice architecture to become efficient.
+Microservices are getting more popular each day, especially thanks to docker, which allowed to use them as easy and fully functional as possible. In past, programmers tried to implement _separation of concerns_ in different ways, based on what current technology was offering them. Starting with object oriented languages to separate responsiblity. Then frameworks and separating layers (MVC, MVVP) comes into play and then it continues with creating Service Oriented Architecture. Finally, the level of infrastructure worldwide, powered by cloud technology, allowed microservice architecture to become more efficient.
 
 ### Advantages
 
-With microservices, you can assign more developers to the same project at the same time without interfering with each other work (which is costly), because they work on different microservices. You can easily deploy and scale microservices (i.e. parsing statistics is not fast enough? Lets run five instances of it) and much more! 
+With microservices, you can assign more developers to the same project at the same time without interfering with each other's work (which is costly), because they work on different microservices. You can easily deploy and scale microservices (i.e. parsing statistics is not fast enough? Lets run five instances of it) and much more!
 
-This is the future. We are the future. Akcee. (No, it is not official motto, it is my brain producing awesome ideas. This is why I get IT money for writing cookbook!)
+This is the future. We are the future. Ackee. (No, it is not official motto, it is my brain producing awesome ideas. This is why I get IT money for writing cookbook!)
 
 ### Disadvantages
 
-You have to handle communication. Basically only one (serious) disadvantage, but the important one. You have to handle all the possible scenarious that can happen. 
+You have to handle communication. Basically only one (serious) disadvantage, but the important one. You have to handle all the possible scenarios that can happen.
 
 Also, similar to any other previous technologies, if you do not use it _right_, it does not help you.
 
-## MongoDB 
+## MongoDB
 
 ### About
 
-It is perfect match for Node. If you have dynamic-typed language (Javascript) it is good to use it with _schemaless_ database. Aside from that, mongo is also much faster for many database tasks.
+It is perfect match for Node. If you have dynamic-typed language (Javascript) it is good to use it with _schemaless_ database. Aside from that, Mongo is also much faster for many database tasks.
 
 ### Why we use it
 
-For similar reason as we adopted Node. Easy to use, easy to set-up or deploy, does not require pre-defined types (as node.js), have lot of support these days.
+For similar reason as we adopted Node. Easy to use, easy to set-up or deploy, does not require pre-defined types (as Node.js), have a lot of support these days.
 
 ### Do we have to use it
 
@@ -88,7 +88,7 @@ MySQL is relational database owned by Oracle, which every single person who is r
 
 ![Image][image-3]
 
-### Why we use it 
+### Why we use it
 
 As you probably saw above, it is free and well-developed database, which is running on such beast as youtube, facebook or twitter. Talking about relational databases and MySQL would be uninteresting for most of us, therefore I would not write more about it.
 
